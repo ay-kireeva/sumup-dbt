@@ -1,0 +1,54 @@
+dbt_data_tasks:
+  version: 1
+  description: Run dbt process
+  owners:
+    - DWH, Data Engineering, Analytics
+  params:
+    template_path: dwh
+    default:
+      type: dbt
+      command: run
+      project_id: curated_data_shared
+      dbt_target: data_prod
+      root_directory: dwh
+      model: curated_layer
+      profile: default
+      
+    schedules:
+      daily:
+        concurrency: 8
+        tasks:            
+          store:
+          device:
+          transaction:
+          device_kpis:
+            tag: ml_device_kpis
+            parents:
+              - device
+	  - store
+	  - transaction
+          store_kpis:
+            tag: ml_store_kpis
+            parents:
+              - device
+	  - store
+	  - transaction
+          product_kpis:
+            tag: ml_product_kpis
+            parents:
+              - device
+	  - store
+	  - transaction
+          device_type:
+            tag: bl_device_type
+            parents:
+              - device_kpis
+          top_10_stores:
+            tag: bl_top_10_stores
+            parents:
+              - store_kpis
+          average_amount:
+            tag: bl_average_amount
+            parents:
+              - store_kpis
+# ...
