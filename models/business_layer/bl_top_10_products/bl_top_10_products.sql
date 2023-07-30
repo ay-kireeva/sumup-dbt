@@ -3,6 +3,7 @@ SELECT
 ,COUNT(*) AS products_sold
 FROM
 	{{source('curated_data_shared', 'transaction’')}}
+;
 – or similar to the one above (TOP is a legacy function)
 SELECT
 	product_name
