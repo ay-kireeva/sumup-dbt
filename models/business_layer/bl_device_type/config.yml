@@ -1,12 +1,14 @@
 version: 1
-  - name: bl_top_10_stores
+
+models:
+  - name: bl_device_type
     meta:
       owners:
         - ‘Analytics’
         - ‘Data Science’
     config:
-      tags: bl_top_10_stores
+      tags: bl_device_type
       partition_by:
-        field: created_at
+        field: happened_at
         data_type: date
         granularity: day
