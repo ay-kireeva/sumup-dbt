@@ -1,0 +1,15 @@
+version: 1
+
+  models:
+      - name: transaction
+        meta:
+          owners:
+            - ‘DWH’
+        config:
+          tags: transaction
+          partition_by:
+            field: happened_at
+            data_type: date
+            granularity: day
+          materialized: incremental
+          incremental_strategy: insert_overwrite
