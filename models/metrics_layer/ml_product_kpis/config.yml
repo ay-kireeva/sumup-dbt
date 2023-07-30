@@ -1,0 +1,15 @@
+version: 1
+
+  models:
+      - name: ml_product_kpis
+        meta:
+          owners:
+            - ‘Data Engineering’
+        config:
+          tags: ml_product_kpis
+          partition_by:
+            field: happened_at
+            data_type: date
+            granularity: day
+          materialized: incremental
+          incremental_strategy: insert_overwrite
