@@ -1,13 +1,13 @@
 version: 1
 
   models:
-    - name: bl_device_type
+    - name: bl_first_five_transactions
       meta:
         owners:
           - ‘Analytics’
           - ‘Data Science’
       config:
-        tags: bl_device_type
+        tags: bl_first_five_transactions
         partition_by:
           field: happened_at
           data_type: date
