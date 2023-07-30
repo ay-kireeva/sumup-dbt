@@ -11,7 +11,7 @@ FROM
 		ON d.id = t.device_id
 	GROUP BY 1) AS device_transactions
 ;
-– or without legacy functions
+# or without legacy functions
 SELECT
 	device_type
 	,transactions
