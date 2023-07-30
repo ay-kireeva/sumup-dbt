@@ -1,6 +1,6 @@
 SELECT
 	TOP(product_sku,10) AS product
-,COUNT(*) AS products_sold
+	,COUNT(*) AS products_sold
 FROM
 	{{source('curated_data_shared', 'transaction’')}}
 ;
