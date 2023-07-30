@@ -10,6 +10,7 @@ FROM
 	JOIN {{source('curated_data_shared', 'transaction’')}} t
 		ON d.id = t.device_id
 	GROUP BY 1) AS device_transactions
+;
 – or without legacy functions
 SELECT
 	device_type
