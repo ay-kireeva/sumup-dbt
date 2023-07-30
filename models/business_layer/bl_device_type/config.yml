@@ -1,0 +1,12 @@
+version: 1
+  - name: bl_top_10_stores
+    meta:
+      owners:
+        - ‘Analytics’
+        - ‘Data Science’
+    config:
+      tags: bl_top_10_stores
+      partition_by:
+        field: created_at
+        data_type: date
+        granularity: day
