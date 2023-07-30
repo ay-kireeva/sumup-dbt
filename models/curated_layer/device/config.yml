@@ -1,0 +1,9 @@
+version: 1
+
+  models:
+    - name: device
+      meta:
+        owners:
+          - ‘DWH’
+      config:
+        tags: device
