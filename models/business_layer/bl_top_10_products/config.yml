@@ -1,0 +1,10 @@
+version: 1
+
+  models:
+    - name: bl_top_10_products
+      meta:
+        owners:
+          - ‘Analytics’
+          - ‘Data Science’
+      config:
+        tags: bl_top_10_stores
