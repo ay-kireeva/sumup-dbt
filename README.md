@@ -30,7 +30,6 @@ Business / Reporting Layer - is tailored to more specific analytics and business
 The data model projects will be organised in Git repositories and optimised using DBT tools, which allows for version control, propagating changes from upstream to downstream (more on this below) and, especially at the business layer stage, develop Analytics and Data Science models using best development practices (modularity, global variables, parameters, sources, etc.). The engineering pipeline jobs could be scheduled using the workflow management platform (i.e. Airflow) for better visibility of the tasks and troubleshooting, with the most data consuming or computationally heavy tables being refreshed incrementally.
 It’s important to note that in addition to data quality rules tables in the layers should follow the naming convention, especially when being used by various teams across the company, it would make projects and repos more intuitive and easy to search and query.
 
-
 **Data Sources**
 Based on the business needs and data specifications above, the following main data sources can be identified:
 Internal databases - tables with data of onboarded stores, devices characteristics and typology, device error codes;
@@ -42,6 +41,7 @@ The combination of internal (unique to the business), external (used by companie
 The data from external sources can be navigated using GUIs, for instance, performing KYC checks through dedicated portal, checking pipeline alerts in dedicated service (i.e. Datadog), observing store and allocated device performance in a shared customer portal. Other external data sources could be connected either by manually pointing our the name, location and authentication of the source, or through dedicated data connectors.
 
 **Physical Modelling**
+![Data Model](https://github.com/ay-kireeva/sumup-dbt/assets/140977503/d9f02923-2a3d-4952-9e40-a34a4ed7fe1f)
 Please refer to Data Model Design file, that provides visual interpretation and relationships between the tables, it doesn’t contain full list of tables that can be added upon demand to all layers described below following the data quality rules. It gives an overview of the main tables and the data model structuring to answer the Business questions above and be able to adapt once new one arise. It’s designed to ensure long-term validity, reliability, and integrity of the data.
 To normalise the data, curated layer contains entities (stores, devices, transactions) and this is further developed in metrics layer where entity specific values are calculated. This approach is used to prevent redundancy and anomalies in data maintenance. This makes querying and maintenance easier, also reducing the load on servers.
 NB While the schema demonstrates the list of fields in each table, in its current version it doesn’t show the data types and field attributes and touches roughly on primary and foreign keys. Their types, formats, integrity constraints, and any other rules governing them should necessarily be defined while putting the current data model design into practice.
