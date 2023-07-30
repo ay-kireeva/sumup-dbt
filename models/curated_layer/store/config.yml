@@ -1,0 +1,15 @@
+version: 1
+
+  models:
+    - name: store
+      meta:
+        owners:
+          - ‘DWH’
+      config:
+        tags: store
+        partition_by:
+          field: created_at
+          data_type: date
+          granularity: day
+        materialized: incremental
+        incremental_strategy: insert_overwrite
