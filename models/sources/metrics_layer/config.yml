@@ -1,0 +1,10 @@
+version: 1
+  sources:
+    - name: metrics_data_shared
+      project: dwh_metrics_data
+      dataset: metrics_data_shared
+      tables:
+        - name: store_kpis
+        - name: device_kpis
+        - name: product_kpis
+        - name: … <other tables>
