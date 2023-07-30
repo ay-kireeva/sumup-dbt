@@ -1,0 +1,14 @@
+version: 1
+
+  models:
+      - name: bl_average_amount
+        meta:
+          owners:
+            - ‘Analytics’
+            - ‘Data Science’
+        config:
+          tags: bl_average_amount
+          partition_by:
+            field: happened_at
+            data_type: date
+            granularity: day
