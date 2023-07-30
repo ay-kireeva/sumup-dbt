@@ -1,1 +1,30 @@
+version: 2
+sources:  
+  - name: curated_data_shared
+    project: dwh_production_data
+    dataset: curated_data_shared
+    tables:
+      - name: store
+      - name: device
+      - name: transaction
 
+  - name: metrics_data_shared
+    project: dwh_metrics_data
+    dataset: metrics_data_shared
+    tables:
+      - name: store_kpis
+      - name: device_kpis
+      - name: product_kpis
+      - name: … <other tables>
+
+  - name: business_data_shared
+    project: business_analytics_data
+    dataset: business_data_shared
+    tables:
+      - name: device_type
+      - name: top_10_stores
+      - name: churn
+      - name: average_amount
+      - name: fraud_rate
+      - name: top_10_products
+      - name: … <other tables>
